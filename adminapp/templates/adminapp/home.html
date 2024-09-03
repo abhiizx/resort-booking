@@ -1,0 +1,58 @@
+{% extends 'adminapp/shared/base.html' %}
+{% load static %}
+ 
+{% block content %}
+
+<style>
+    .button {
+              display: inline-block;
+              background: #010a13;
+              color: rgb(93, 130, 244);
+              text-transform: uppercase;
+              padding: 20px 30px;
+              border-radius: 5px;
+              box-shadow: 0px 17px 10px -10px rgba(0, 0, 0, 0.4);
+              cursor: pointer;
+              -webkit-transition: all ease-in-out 300ms;
+              transition: all ease-in-out 300ms;
+              margin-top: 200px;
+              /* margin-left: 200px; */
+              height: 120px;
+              width: 200px;
+            }
+            .button:hover {
+              box-shadow: 0px 37px 20px -20px rgba(14, 13, 13, 0.2);
+              -webkit-transform: translate(0px, -10px) scale(1.2);
+                      transform: translate(0px, -10px) scale(1.2);
+            }
+            #a1{
+              color: rgb(219, 240, 240);
+            }
+          
+    
+    </style>
+    <div class="container">
+        <div class="row" style="margin-right:150px">
+          <div class="col-3">
+            <a href="{% url 'add_resort' %}" id="b1"><button class="button" >ADD RESORT</button></a>
+          </div>
+          <div class="col-3">
+            <a href="{% url 'view_resort' %}" id="b2"><button class="button" >VIEW RESORT</button></a>
+          </div>
+          <div class="col-3">
+            <a href="{% url 'view_customer' %}" id="b2"><button class="button" >VIEW CUSTOMERS</button></a>
+          </div>
+          <div class="col-3">
+            <a href="{% url 'view_bookings' %}" id="b2"><button class="button" >VIEW BOOKINGS</button></a>
+          </div>
+     
+        </div>
+      </div>
+    </body>
+
+     
+{% endblock content %}
+    
+    
+      
+ 

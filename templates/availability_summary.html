@@ -1,0 +1,30 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+{% block nav %}
+    {{ block.super }}
+{% endblock %}
+
+{% block content %}
+<h1 class="text-center align-top">Availability Summary</h1>
+<div class="container">
+    <div class="row">
+        {% for i in available_rooms %}
+            <div class="col-md-4 mb-4">
+                <div class="card text-center" style="width: 18rem; margin: 20px auto;">
+                    <img src="{{ i.img.url }}" class="card-img-top" alt="{{ i.name }}" height="150px" width="200px">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ i.name }}</h5>
+                        <p class="card-text">{{ i.desc }}</p>
+                        <p class="card-text">Total Price: {{ i.total_price }}</p>
+                        <form action="{% url 'book_now' i.id %}" method="POST">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-outline-primary mt-3">Book now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% block content %}
+<h1>Availability Results</h1>
+<p>Booking: {{ booking.name }}</p>
+<p>Number of days: {{ num_days }}</p>
+<p>Total price: ${{ total_price }}</p>
+<a href="{% url 'home' %}" class="link-success">Booking Completed</a>
+
+{% endblock %}

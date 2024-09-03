@@ -1,0 +1,47 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+{% block nav %}
+    {{ block.super }}
+{% endblock %}
+
+{% block content %}
+<h1 class="text-center align-top">BOOKING</h1>
+<div class="container">
+    <div class="row">
+        {% for i in book %}
+            <!-- Close the previous row and start a new one every three items -->
+            {% if forloop.counter0|divisibleby:"3" and not forloop.first %}
+                </div>
+                <div class="row">
+            {% endif %}
+            
+            <div class="col-md-4 mb-4">
+                <div class="card text-center" style="width: 18rem; margin: 20px auto;">
+                    <img src="{{ i.img.url }}" class="card-img-top" alt="{{ i.name }}" height="150px" width="200px">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ i.name }}</h5>
+                        <p class="card-text">{{ i.desc }}</p>
+                        <form action="{% url 'check_availability' i.id %}" method="POST">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="checkin_date">Check-in Date:</label>
+                                <input type="date" id="checkin_date" name="checkin_date" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="checkout_date">Check-out Date:</label>
+                                <input type="date" id="checkout_date" name="checkout_date" class="form-control" required>
+                            </div>
+                            <button type="submit" class="btn btn-outline-success mt-3">Check availability</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            {% if forloop.last %}
+                </div> <!-- Close the last row -->
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

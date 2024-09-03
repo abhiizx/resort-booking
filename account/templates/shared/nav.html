@@ -1,0 +1,29 @@
+
+<nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #2b1f0e; height: 100px;"> 
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+        aria-expanded="false" aria-label="Toggle navigation"></button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        
+            
+            <li class="nav-item active" style="padding-left: 200px; font-size: 38px;">
+                <a class="nav-link font text-white font-weight-bold " href="#">Hotel booking system<span class="sr-only">(current)</span></a>
+            </li>
+           
+            <li class="nav-item active" style="font-size:20px ;  padding-left: 700px; padding-top: 20px;">
+                <a class="nav-link text-white font-weight-bold" href="{% url 'login'  %}">Login <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active" style="font-size:20px ; padding-left: 40px; padding-top: 20px;">
+                <a class="nav-link text-white font-weight-bold" href="{% url 'signup'  %}">Signup <span class="sr-only">(current)</span></a>
+            </li>
+
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+
+        </form>
+    </div>
+</nav>
+{% load static %}
+<body id="bg"  style="background-image: url({% static 'images/hotel2.jpeg' %}); background-repeat:no-repeat;
+background-size:1800px 800px;">
+   </body>

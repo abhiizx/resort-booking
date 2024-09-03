@@ -1,0 +1,126 @@
+
+{% extends 'adminapp/shared/base.html' %}
+{% block content %}
+
+<h1 style=" padding-left: 400px; padding-top: 50px; padding-bottom: 50px;">Add Resort</h1>
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+<section class="vh-100">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-9">
+
+
+        <div class="card" style="border-radius: 15px;">
+          <div class="card-body">
+          
+            <div class="row align-items-center pt-4 pb-3">
+              <div class="col-md-3 ps-5">
+                <h6 class="mb-0">Resort No</h6>
+              </div>
+              <div class="col-md-9 pe-5">
+                <input type="number" placeholder="Enter resort no" name="roomno" id="roomno" required class="form-control form-control-lg" >
+              </div>
+            </div>
+            <hr class="mx-n3">
+
+
+            <div class="row align-items-center pt-4 pb-3">
+              <div class="col-md-3 ps-5">
+                <h6 class="mb-0">Resort Description</h6>
+              </div>
+              <div class="col-md-9 pe-5">
+                <textarea class="form-control" rows="3" placeholder="Enter description" name="des" id="des"></textarea>
+              </div>
+            </div>
+            <hr class="mx-n3">
+
+
+            
+            <div class="row align-items-center pt-4 pb-3">
+              <div class="col-md-3 ps-5">
+                <h6 class="mb-0">Ac Status:</h6>
+              </div>
+              <div class="col-md-9 pe-5">
+                <input type="radio" id="ac" name="ac" value="True"  >
+                <label for="ac">Ac</label>
+                <input type="radio" id="nonac" name="ac" value="False">
+                <label for="nonac">Non-Ac</label><br>
+              </div>
+            </div>
+            <hr class="mx-n3">
+
+
+
+
+            <div class="row align-items-center pt-4 pb-3">
+              <div class="col-md-3 ps-5">
+                <h6 class="mb-0">Room type</h6>
+              </div>
+              <div class="col-md-9 pe-5">
+                <select id="type" name="type">
+                  <option value="single">single Room</option>
+                  <option value="double">Double Room</option>
+                  <option value="triple">Triple Room</option>
+                  <option value="deluxe">Deluxe Room</option>
+                </select>
+              </div>
+            </div>
+            <hr class="mx-n3">
+
+
+
+            <div class="row align-items-center pt-4 pb-3">
+              <div class="col-md-3 ps-5">
+                <h6 class="mb-0">Bed type</h6>
+              </div>
+              <div class="col-md-9 pe-5">
+                <select id="bed" name="bed">
+                  <option value="single">single bed</option>
+                  <option value="queen">Queen-size bed</option>
+                  <option value="king">King-size bed</option>
+                </select><br>
+              </div>
+            </div>
+            <hr class="mx-n3">
+
+
+
+
+            <div class="row align-items-center pt-4 pb-3">
+              <div class="col-md-3 ps-5">
+                <h6 class="mb-0">Rate</h6>
+              </div>
+              <div class="col-md-9 pe-5">
+                <input type="number" placeholder="rate" name="rate" id="rate" required class="form-control form-control-lg" >
+              </div>
+            </div>
+            <hr class="mx-n3">
+
+
+    
+
+            <div class="row align-items-center py-3">
+              <div class="col-md-3 ps-5">
+                <h6 class="mb-0">Image</h6>
+              </div>
+              <div class="col-md-9 pe-5">
+                <input type="file" id="img" name="img" aria-describedby="inputGroupFileAddon01" class="form-control form-control-lg">
+              </div>
+            </div>
+            <hr class="mx-n3">
+
+
+            <div class="px-5 py-4">
+              <button type="submit" class="btn btn-primary btn-lg">Add Resort</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</form>
+
+{% endblock content %}

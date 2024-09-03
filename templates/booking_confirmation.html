@@ -1,0 +1,12 @@
+
+
+{% block content %}
+
+<!-- booking_confirmation.html -->
+<h1>Booking Confirmation</h1>
+<p>Thank you for your booking, {{ booking.user.username }}!</p>
+<p>Check-in Date: {{ booking.checkin_date }}</p>
+<p>Check-out Date: {{ booking.checkout_date }}</p>
+<p>Total Price: ${{ booking.total_price }}</p>
+
+{% endblock %}

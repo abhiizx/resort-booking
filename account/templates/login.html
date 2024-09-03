@@ -1,0 +1,24 @@
+{% extends 'account/shared/base.html' %}
+        
+{% block content %}
+{% load static %}
+<body>
+
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group" style="color: rgb(251, 243, 250);" >
+            <h1 style="padding-top:100px ;">Login</h1><br><br>
+            <label for="uname"><b>Username</b></label>
+            <input type="text"class="form-control"  placeholder="Enter Username" name="uname" id="uname" required><br><br>
+  
+            <label for="psw"><b>Password</b></label>
+            <input type="password" class="form-control" placeholder="Enter Password" name="pswd" id="pswd" required>
+        </div>
+        <div  style="padding-left:100px">
+            <button type="submit" class="btn btn-primary">Login</button></div><br>
+            <a href="/signup/" class="pass h5 text-info">Don't have account?SignUp</a>
+    </form>
+  
+  </body>
+
+{% endblock content %}

@@ -1,0 +1,8 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+{% block content %}
+<h1 class="text-center text-success">Booking Completed</h1>
+<p class="text-center">Thank you! Your booking has been successfully completed.</p>
+<a href="{% url 'my_booking' %}" class="btn btn-primary d-block mx-auto" style="width: 200px;">Go to My Booking</a>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'adminapp/shared/base.html' %}
+{% block content %}
+<u><h1 style="padding-top: 50px; padding-left: 350px;">Customer Details</h1></u>
+<div style="padding-top: 30px;">
+
+<table class="table  table-hover table-striped table-bordered table-dark"  >
+    <thead>
+        <tr class="table-active">
+            <th>Customer ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+            <th>Adhar No</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>Phone No</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for j in  i %}
+            <tr>
+                <td>{{j.cid}}</td>
+                <td>{{j.fname}}</td>
+                <td>{{j.lname}} </td>
+                <td>{{j.age}}</td>
+                <td>{{j.adhar}}</td>
+                <td>{{j.address}}</td>
+                <td>{{j.email}}</td>
+                <td>{{j.phnno}} </td>
+
+                <td>
+                    <a href="{% url 'delete_customer' id=j.cid %}" class="btn btn-danger btn-sm">delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+
+
+
+
+    {% endblock content %}

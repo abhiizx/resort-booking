@@ -1,0 +1,38 @@
+{% extends 'adminapp/shared/base.html' %}
+{% block content %}
+<u><h1 style="padding-top: 50px; padding-left: 350px;">Booking Details</h1></u>
+<div style="padding-top: 30px;">
+
+<table class="table  table-hover table-striped table-bordered table-dark"  >
+    <thead>
+        <tr class="table-active">
+            <th>Checkin </th>
+            <th>Checkout</th>
+            <th>Amount</th>
+            <th>customer id</th>
+            <th>resort id</th>
+            <th>action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for j in  i %}
+            <tr>
+                <td>{{j.checkin}}</td>
+                <td>{{j.checkout}}</td>
+                <td>{{j.amount}} </td>
+                <td>{{j.customer_id}}</td>
+                <td>{{j.resort_id}}</td>
+         
+                <td>
+                    <a href="#" class="btn btn-danger btn-sm">delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+
+
+
+
+    {% endblock content %}
